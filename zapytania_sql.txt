@@ -1,0 +1,27 @@
+zapytanie zwracające listę wszystkich produktów posortowanych alfabetycznie oraz po cenie malejąco
+SELECT * FROM [Products] ORDER BY ProductName AND Price desc;
+
+zapytanie zwracające zamówienie (id zamówienia, data zamówienia, nazwa produktu, ilość produktu (sztuki)
+w zamówieniu) dla zamówienia o id 10406
+SELECT Orders.OrderId, Orders.OrderDate, Products.ProductName, OrderDetails.Quantity 
+FROM [Orders] 
+INNER JOIN [Products] 
+Inner JOIN [OrderDetails] 
+WHERE Orders.OrderId = '10406' LIMIT 1;
+
+zapytanie zwracające liczbę produktów w poszczególnych kategoriach (id kategorii, nazwa kategorii, liczba
+produktów) posortowanych rosnąco po liczbie produktów
+SELECT Categories.CategoryId, Categories.CategoryName, Products.Unit  
+FROM [Categories] 
+INNER JOIN [Products]
+ORDER BY Products.Unit DESC;
+
+zapytanie zwracające top 10 zamówień o największej wartości (id zamówienia, data zamówienia, wartość) ze
+stycznia 1997
+SELECT Orders.OrderId, Orders.OrderDate, OrderDetails.Quantity  
+FROM [Orders] 
+INNER JOIN [OrderDetails]
+WHERE Orders.OrderDate LIKE '1997-01%'
+ORDER BY OrderDetails.Quantity DESC
+Limit 10;
+
