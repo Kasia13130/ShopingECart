@@ -1,0 +1,16 @@
+{
+    "name": "kasia/shoping-ecart",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "Kasia\\ShopingEcart\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Kasia13130",
+            "email": "kuckatarzyna399@gmail.com"
+        }
+    ],
+    "require": {}
+}
